@@ -1,2 +1,0 @@
-(this["webpackJsonpclient-g-tech"]=this["webpackJsonpclient-g-tech"]||[]).push([[0],{9:function(e,t,c){"use strict";c.r(t);c(0);var n=c(3),r=c.n(n),o=c(1),i=function(){return Object(o.jsx)("div",{children:"Hello from app"})};r.a.render(Object(o.jsx)(i,{}),document.querySelector("#root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.21762202.chunk.js.map
