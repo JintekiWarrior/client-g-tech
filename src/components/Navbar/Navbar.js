@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import DropDown from './../DropDown/DropDown'
 import { AppBar, Toolbar } from '@material-ui/core'
 import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link'
@@ -14,8 +15,19 @@ const useStyles = makeStyles({
   }
 })
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, isAdmin }) => {
+
   const classes = useStyles()
+
+  const adminLinks = (
+    <Fragment>
+      <DropDown>
+        <Link className={classes.link} component={RouterLink} to='/create-product'>Create</Link>
+        <Link className={classes.link} component={RouterLink} to='/update-product'>Update</Link>
+        <Link className={classes.link} component={RouterLink} to='/delete-product'>Delete</Link>
+      </DropDown>
+    </Fragment>
+  )
 
   const signedIn = (
     <Fragment>
@@ -63,6 +75,7 @@ const Navbar = ({ user }) => {
     <AppBar position="static" className={classes.navBar}>
       <Toolbar style={{ justifyContent: 'flex-end' }}>
         {user ? signedIn : notSignedIn}
+        {isAdmin ? adminLinks : ''}
       </Toolbar>
     </AppBar>
   )

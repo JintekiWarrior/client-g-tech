@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { signIn } from './../../api/auth'
-import { withRouter } from 'react-router-dom'
+import { createProduct } from './../../api/product'
 
-// Material ui components
 import Paper from '@material-ui/core/Paper'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -19,28 +17,24 @@ const useStyles = makeStyles({
   }
 })
 
-const SignIn = ({ user, setUser, setIsAdmin, history }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+const CreateProduct = ({ user }) => {
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
 
   const classes = useStyles()
 
-  const onSignIn = event => {
+  const onCreateProduct = event => {
     event.preventDefault()
-    const fetchUser = async () => {
+    const create = async () => {
       try {
-        const res = await signIn(email, password)
-        setUser(res.data.user)
-        if (res.data.user.role === "admin") {
-          setIsAdmin(true)
-        }
-        history.push('/')
+        const res = await createProduct(user, title, description)
+        console.log('successfully created', res.data)
       } catch (error) {
         console.log(error)
       }
     }
 
-    fetchUser()
+    create()
   }
 
   return (
@@ -49,26 +43,28 @@ const SignIn = ({ user, setUser, setIsAdmin, history }) => {
         variant='h4'
         align='center'
       >
-        Sign In
+        Add a product
       </Typography>
-      <form onSubmit={onSignIn}>
+      <form onSubmit={onCreateProduct}>
         <TextField
           className={classes.input}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          label="Email"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          label="Title"
           color="primary"
           fullWidth
           required
         />
         <TextField
           className={classes.input}
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          label="Password"
-          type="password"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+          label="Description"
           color="primary"
+          variant="outlined"
           fullWidth
+          multiline
+          rows={4}
           required
         />
         <Button
@@ -84,4 +80,4 @@ const SignIn = ({ user, setUser, setIsAdmin, history }) => {
   )
 }
 
-export default withRouter(SignIn)
+export default CreateProduct
