@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/client-g-tech/static/css/main.be7d770b.chunk.css",
-    "main.js": "/client-g-tech/static/js/main.6f9c29a4.chunk.js",
-    "main.js.map": "/client-g-tech/static/js/main.6f9c29a4.chunk.js.map",
+    "main.js": "/client-g-tech/static/js/main.fd48c847.chunk.js",
+    "main.js.map": "/client-g-tech/static/js/main.fd48c847.chunk.js.map",
     "runtime-main.js": "/client-g-tech/static/js/runtime-main.d89219d6.js",
     "runtime-main.js.map": "/client-g-tech/static/js/runtime-main.d89219d6.js.map",
-    "static/js/2.38dc3ff9.chunk.js": "/client-g-tech/static/js/2.38dc3ff9.chunk.js",
-    "static/js/2.38dc3ff9.chunk.js.map": "/client-g-tech/static/js/2.38dc3ff9.chunk.js.map",
+    "static/js/2.9c1d8ff5.chunk.js": "/client-g-tech/static/js/2.9c1d8ff5.chunk.js",
+    "static/js/2.9c1d8ff5.chunk.js.map": "/client-g-tech/static/js/2.9c1d8ff5.chunk.js.map",
     "index.html": "/client-g-tech/index.html",
     "static/css/main.be7d770b.chunk.css.map": "/client-g-tech/static/css/main.be7d770b.chunk.css.map",
-    "static/js/2.38dc3ff9.chunk.js.LICENSE.txt": "/client-g-tech/static/js/2.38dc3ff9.chunk.js.LICENSE.txt"
+    "static/js/2.9c1d8ff5.chunk.js.LICENSE.txt": "/client-g-tech/static/js/2.9c1d8ff5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d89219d6.js",
-    "static/js/2.38dc3ff9.chunk.js",
+    "static/js/2.9c1d8ff5.chunk.js",
     "static/css/main.be7d770b.chunk.css",
-    "static/js/main.6f9c29a4.chunk.js"
+    "static/js/main.fd48c847.chunk.js"
   ]
 }
