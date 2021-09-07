@@ -24,7 +24,7 @@ const Navbar = ({ user, isAdmin }) => {
       <DropDown>
         <Link className={classes.link} component={RouterLink} to='/create-product'>Create</Link>
         <Link className={classes.link} component={RouterLink} to='/update-product'>Update</Link>
-        <Link className={classes.link} component={RouterLink} to='/delete-product'>Delete</Link>
+        <Link className={classes.link} component={RouterLink} to='/index-products'>Index</Link>
       </DropDown>
     </Fragment>
   )

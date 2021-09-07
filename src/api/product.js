@@ -1,7 +1,18 @@
 import apiUrl from './../apiConfig'
 import axios from 'axios'
 
-export const createProduct = (user, title, description) => {
+export const createProduct = (
+  user,
+  title,
+  description,
+  imageUrl,
+  creator,
+  genre,
+  platform,
+  rating,
+  quantity,
+  price
+) => {
   return axios({
     method: 'POST',
     url: apiUrl + '/products',
@@ -11,10 +22,26 @@ export const createProduct = (user, title, description) => {
     data: {
       product: {
         productDetails: {
-          title: title,
-          description: description
+          title,
+          description,
+          imageUrl,
+          creator,
+          genre,
+          platform,
+          rating
+        },
+        purchaseDetails: {
+          quantity,
+          price
         }
       }
     }
+  })
+}
+
+export const indexProducts = () => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/products'
   })
 }
