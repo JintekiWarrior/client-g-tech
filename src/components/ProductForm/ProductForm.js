@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 })
 
 const ProductForm = ({
-  onCreateProduct,
+  onSubmitProduct,
   title,
   setTitle,
   description,
@@ -46,7 +46,7 @@ const ProductForm = ({
       >
         Add a product
       </Typography>
-      <form onSubmit={onCreateProduct}>
+      <form onSubmit={onSubmitProduct}>
         <TextField
           className={classes.input}
           value={title}

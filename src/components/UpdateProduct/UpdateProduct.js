@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { createProduct } from './../../api/product'
+import { updateProduct } from './../../api/product'
+import { useParams } from 'react-router-dom'
 import ProductForm from './../ProductForm/ProductForm'
 
-const CreateProduct = ({ user }) => {
+const UpdateProduct = ({ user }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [imageUrl, setImageUrl] = useState('')
@@ -13,12 +14,15 @@ const CreateProduct = ({ user }) => {
   const [quantity, setQuantity] = useState(0)
   const [price, setPrice] = useState(0)
 
-  const onCreateProduct = event => {
+  let { id } = useParams()
+
+  const onUpdateProduct = event => {
     event.preventDefault()
-    const create = async () => {
+    const update = async () => {
       try {
-        const res = await createProduct(
+        const res = await updateProduct(
           user,
+          id,
           title,
           description,
           imageUrl,
@@ -29,18 +33,18 @@ const CreateProduct = ({ user }) => {
           quantity,
           price
         )
-        console.log('successfully created', res.data)
+        console.log('successfully updated', res.data)
       } catch (error) {
         console.log(error)
       }
     }
 
-    create()
+    update()
   }
 
   return (
     <ProductForm
-      onSubmitProduct={onCreateProduct}
+      onSubmitProduct={onUpdateProduct}
       title={title}
       setTitle={setTitle}
       description={description}
@@ -63,4 +67,4 @@ const CreateProduct = ({ user }) => {
   )
 }
 
-export default CreateProduct
+export default UpdateProduct

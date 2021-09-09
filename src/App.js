@@ -12,6 +12,7 @@ import SignOut from './components/SignOut/SignOut'
 // admin routes
 import CreateProduct from './components/CreateProduct/CreateProduct'
 import IndexProducts from './components/IndexProducts/IndexProducts'
+import UpdateProduct from './components/UpdateProduct/UpdateProduct'
 
 // material ui components
 import Container from '@material-ui/core/Container'
@@ -57,6 +58,9 @@ class App extends Component {
           {/* Admin routes */}
           <AuthRoute user={user} path='/create-product' render={() => (
             <CreateProduct user={user} />
+          )} />
+          <AuthRoute user={user} path='/update-product/:id' render={() => (
+            <UpdateProduct user={user} />
           )} />
           <Route path='/index-products' render={() => (
             <IndexProducts />

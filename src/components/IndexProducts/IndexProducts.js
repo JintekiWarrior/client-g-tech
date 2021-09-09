@@ -1,10 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { indexProducts } from './../../api/product'
+import { Link as RouterLink } from 'react-router-dom'
 
 // Material ui components
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
+import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core'
 
 // images
@@ -67,6 +69,12 @@ const IndexProducts = () => {
               {product.productDetails.description}
             </Typography>
           </CardContent>
+          <Link
+            component={RouterLink}
+            to={`/update-product/${product._id}`}
+          >
+              Update
+          </Link>
         </Card>
       ))}
     </Fragment>

@@ -45,3 +45,42 @@ export const indexProducts = () => {
     url: apiUrl + '/products'
   })
 }
+
+export const updateProduct = (
+  user,
+  productId,
+  title,
+  description,
+  imageUrl,
+  creator,
+  genre,
+  platform,
+  rating,
+  quantity,
+  price
+) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/products/' + productId,
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      product: {
+        productDetails: {
+          title,
+          description,
+          imageUrl,
+          creator,
+          genre,
+          platform,
+          rating
+        },
+        purchaseDetails: {
+          quantity,
+          price
+        }
+      }
+    }
+  })
+}
