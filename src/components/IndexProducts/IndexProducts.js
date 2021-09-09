@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core'
 
+import DeleteProduct from './../DeleteProduct/DeleteProduct'
+
 // images
 // import imagePath from './../../images/Assassins-Creed-2.jpg'
 
@@ -30,7 +32,7 @@ const useStyles = makeStyles({
   }
 })
 
-const IndexProducts = () => {
+const IndexProducts = ({ user }) => {
   const [products, setProducts] = useState([])
 
   const classes = useStyles()
@@ -75,6 +77,10 @@ const IndexProducts = () => {
           >
               Update
           </Link>
+          <DeleteProduct
+            user={user}
+            productId={product._id}
+          />
         </Card>
       ))}
     </Fragment>

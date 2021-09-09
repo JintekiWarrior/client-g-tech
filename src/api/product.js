@@ -84,3 +84,13 @@ export const updateProduct = (
     }
   })
 }
+
+export const deleteProduct = (user, productId) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + '/products/' + productId,
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}

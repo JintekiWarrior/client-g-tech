@@ -62,8 +62,8 @@ class App extends Component {
           <AuthRoute user={user} path='/update-product/:id' render={() => (
             <UpdateProduct user={user} />
           )} />
-          <Route path='/index-products' render={() => (
-            <IndexProducts />
+          <AuthRoute user={user} path='/index-products' render={() => (
+            <IndexProducts user={user} />
           )} />
         </Container>
       </Fragment>
